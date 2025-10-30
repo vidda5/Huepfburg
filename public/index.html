@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hüpfburg Buchungssystem - Gemeinde</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hüpfburg Buchungssystem</h1>
+            <p class="subtitle">Gemeinde Jugendfeuerwehr - Buchungssystem für Vereine</p>
+        </header>
+
+        <main>
+            <!-- Buchungsformular -->
+            <section class="booking-form-section">
+                <h2>Neue Buchung erstellen</h2>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="verein_name">Vereinsname *</label>
+                        <input type="text" id="verein_name" name="verein_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_person">Ansprechpartner *</label>
+                        <input type="text" id="contact_person" name="contact_person" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="start_date">Von (Datum) *</label>
+                            <input type="date" id="start_date" name="start_date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="end_date">Bis (Datum) *</label>
+                            <input type="date" id="end_date" name="end_date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event_description">Veranstaltungsbeschreibung</label>
+                        <textarea id="event_description" name="event_description" rows="3" placeholder="z.B. Sommerfest, Jugendfreizeit, etc."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Buchung anfragen</button>
+                </form>
+            </section>
+
+            <!-- Kalenderansicht -->
+            <section class="calendar-section">
+                <h2>Buchungskalender</h2>
+                <div class="calendar-controls">
+                    <button id="prevMonth" class="btn btn-secondary">&larr; Vorheriger Monat</button>
+                    <h3 id="currentMonth"></h3>
+                    <button id="nextMonth" class="btn btn-secondary">Nächster Monat &rarr;</button>
+                </div>
+                <div id="calendar" class="calendar"></div>
+            </section>
+
+            <!-- Buchungsliste -->
+            <section class="bookings-section">
+                <h2>Aktuelle Buchungen</h2>
+                <div id="bookingsList" class="bookings-list"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Gemeinde Jugendfeuerwehr - Hüpfburg Buchungssystem</p>
+        </footer>
+    </div>
+
+    <!-- Modal für Buchungsdetails -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Buchungsdetails</h3>
+            <div id="bookingDetails"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
